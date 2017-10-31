@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('letters','LettersController@index');
+//Route::get('letter/create','LettersController@create');
+//Route::get('letters/{id}','LettersController@show');
+
+Route::resource('letters','LettersController');
