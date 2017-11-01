@@ -47,25 +47,8 @@ class LettersController extends Controller
     {
         $letter = new Letter($request->all());
 
-        $ipAddress = '';
-
-//        // Check for X-Forwarded-For headers and use those if found
-//        if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && ('' !== trim($_SERVER['HTTP_X_FORWARDED_FOR']))) {
-//            $ipAddress = trim($_SERVER['HTTP_X_FORWARDED_FOR']);
-//        } else {
-//            if (isset($_SERVER['REMOTE_ADDR']) && ('' !== trim($_SERVER['REMOTE_ADDR']))) {
-//                $ipAddress = trim($_SERVER['REMOTE_ADDR']);
-//            }
-//        }
-//
-
-//        dd($_SERVER['HTTP_USER_AGENT']);
-      dd($letter->getRealIP());
-
-
-      return($request->ip());
-
-        $letter['userIp']=LetterRequest::ip();
+        $letter['userIp']=$request->ip();
+        $letter['userAgent']=$request->userAgent();
 
         Auth::user()->letters()->save($letter);
 
