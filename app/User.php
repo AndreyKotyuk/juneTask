@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function letter(){
+    public function letters(){
         return $this->hasMany('App\Letter');
     }
 }

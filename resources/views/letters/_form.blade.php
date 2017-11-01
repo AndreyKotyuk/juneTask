@@ -1,4 +1,5 @@
- {!! Form::hidden('userIp',1) !!}
+ {{--{!! Form::hidden('userIp',1) !!}--}}
+ {{--{!! Form::hidden('userId',1) !!}--}}
 
 <div class="form-group">
     {!! Form::label('userName','Name:') !!}

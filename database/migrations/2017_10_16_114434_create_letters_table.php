@@ -15,10 +15,18 @@ class CreateLettersTable extends Migration
     {
         Schema::create('letters', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('userName');
             $table->string('email');
             $table->text('text');
             $table->timestamps();
+
+
+
+            $table->foreign('user_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');
+
         });
     }
 
