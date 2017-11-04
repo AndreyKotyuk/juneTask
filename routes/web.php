@@ -26,3 +26,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('letters/{id}','LettersController@show');
 
 Route::resource('letters','LettersController');
+
+
